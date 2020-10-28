@@ -1,0 +1,2 @@
+FLASK_APP=webproject.py
+FLASK_ENV=development
