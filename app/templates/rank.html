@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>网易直播</title>
-    <link rel="stylesheet" href="../static/index.css">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../static/base.css">
     <link rel="SHORTCUT ICON" href="//cc.res.netease.com/act/webcc/favicon/favicon.ico">
 </head>
 <body>
@@ -11,7 +12,7 @@
 <div class="header-center padding-block special">
     <div class="menu-location">
         <a href="#" class="logo"></a>
-        <a href="url_for('main.login')" class="location-item">登录</a>
+        <a href="app/tem/login.html" class="location-item">登录</a>
         <a href="app/tem/login.html" class="location-item">注册</a>
         <a href="rank.html" class="location-item">排行</a>
         <a href="enroll.html" class="location-item">报名</a>
@@ -25,7 +26,29 @@
     <div>
 </div>
 </div>
-
-
+<div class="rank">
+        <h2>
+            <img src="../static/image/hot.png">
+            人气排行榜
+        </h2>
+        <table class="rank_table">
+            <thead>
+            <tr>
+                <th>排名</th>
+                <th>名字</th>
+                <th>得票数</th>
+                <th>投票</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>100</td>
+                <td><button>投票</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

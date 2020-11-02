@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-    <h1>Hi, {{ name }}!</h1>
-    {% for movie in movies %}
-    <div><p>{{ movie.title }} - {{ movie.year }}</p></div>
-    {% endfor %}
-{% endblock %}

@@ -1,0 +1,240 @@
+.block-container {
+    display: -webkit-box;
+    width: 1000px;
+    margin: 0 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+
+}
+.block-container .block-item {
+    padding: 24px 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--black06);
+}
+.block-container .block-item .block-item-wrapper {
+    -webkit-box-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: flex;
+}
+.label {
+    -webkit-box-flex: 0;
+    flex: none;
+    width: 142px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.label1 {
+    -webkit-box-flex: 0;
+    flex: none;
+    width: 700px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.content {
+    -webkit-box-flex: 1;
+    flex: 1;
+    color: #666;
+    color: var(--black02);
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    word-break: break-all;
+}
+.input{
+    outline-style: none ;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 13px 14px;
+    width: 620px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Microsoft soft";
+}
+.input1{
+    outline-style: none ;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 13px 14px;
+    width: 55px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Microsoft soft";
+    align-items: center;
+    background-color: #fff;
+}
+
+.block-item-wrapper {
+    -webkit-box-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: flex;
+}
+byte-spin {
+    display: inline-block;
+}
+.byte-spin .byte-spin-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+.byte-spin .byte-spin-container .byte-spin-content {
+    position: relative;
+}
+.avatar-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #d8d8d8;
+    border: 1px solid var(--black05);
+}
+.m-avataruploader-imagewrapper.active {
+    cursor: pointer;
+}
+.m-avataruploader-imagewrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.m-avataruploader-imagewrapper.active:before {
+    display: inline-block;
+}
+.m-avataruploader-imagewrapper:before {
+    content: "更换头像";
+    position: absolute;
+    width: 100%;
+    height: 32px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    line-height: 24px;
+    font-size: 12px;
+}
+.avatar-item .avatar-wrapper img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.m-avataruploader-imagewrapper .imagewrapper-image-url {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+img {
+    border-style: none;
+}
+.m-avataruploader-imagewrapper .imagewrapper-image-op {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+}
+.m-avataruploader-imagewrapper .imagewrapper-image-op .upload-handler {
+    width: 80px;
+    height: 80px;
+}
+.upload-handler {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.upload-handler input[type=file] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.garr-container a, .garr-container input, .garr-container textarea {
+    outline: 0;
+}
+.garr-container a, .garr-container input, .garr-container textarea {
+    outline: 0;
+}
+input[type=file] {
+    display: block;
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    line-height: 1.15;
+    margin: 0;
+}
+* {
+    outline: none;
+}
+* {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+user agent stylesheet
+input[type="file" i] {
+    appearance: initial;
+    background-color: initial;
+    cursor: default;
+    align-items: baseline;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: pre;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden;
+}
+user agent stylesheet
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}

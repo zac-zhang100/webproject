@@ -1,11 +1,7 @@
 from flask import Flask
 from config import Config
 from flask_login import LoginManager
-import pymongo
 
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-db = myclient["test"]
-collection = db["user"]
 
 login = LoginManager()
 

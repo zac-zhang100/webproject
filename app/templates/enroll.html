@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../static/base.css">
+    <link rel="stylesheet" type="text/css" href="../static/enroll.css">
+    <link rel="SHORTCUT ICON" href="//cc.res.netease.com/act/webcc/favicon/favicon.ico">
+</head>
+<body>
+<div class="header">
+<div class="header-center padding-block special">
+    <div class="menu-location">
+        <a href="#" class="logo"></a>
+        <a href="app/tem/login.html" class="location-item">登录</a>
+        <a href="app/tem/login.html" class="location-item">注册</a>
+        <a href="rank.html" class="location-item">排行</a>
+        <a href="enroll.html" class="location-item">报名</a>
+    </div>
+    <div class="user-do">
+        <div class="search user-do-item" id="searchBoss">
+            <input type="text" placeholder="搜索主播ID" class="search-text js-search-text" maxlength="30">
+            <span class="search-btn js-search-btn def-font searcher">
+            </span>
+        </div>
+    <div>
+</div>
+</div>
+<div class="block-container">
+<form method="post">
+    <div class="block-item">
+        <div class="block-item-wrapper">
+            <div class="label">昵称</div>
+            <div class="content">
+                <div>
+                    <input class="input" type="text" name="nickname" placeholder="输入框默认内容">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-item">
+        <div class="block-item-wrapper">
+            <div class="label">名字</div>
+            <div class="content">
+                <div>
+                    <input class="input" type="text" name="name" placeholder="输入框默认内容">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-item">
+        <div class="block-item-wrapper">
+            <div class="label">电话</div>
+            <div class="content">
+                <div>
+                    <input class="input" type="text" name="phone" placeholder="输入框默认内容">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-item">
+        <div class="block-item-wrapper">
+            <div class="label">密码</div>
+            <div class="content">
+                <div>
+                    <input class="input" type="text" name="password" placeholder="输入框默认内容">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-item">
+        <div class="block-item-wrapper">
+            <div class="label">头像</div>
+            <div class="content">
+                <div class="byte-spin">
+                  <div class="byte-spin-container">
+                    <div class="byte-spin-content">
+                        <div style="display:flex; align-items:center">
+                            <div class="avatar-wrapper">
+                                <div class="m-avataruploader-imagewrapper active" tabindex="0">
+                                    ::before
+                                    <img class="imagewrapper-image-url" src="#">
+                                    <div class="imagewrapper-image-op">
+                                        <div class="upload-handler">
+                                            <input class="input" id="test" type="file" name="photo" accept="image/*" title>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-item">
+        <div class="block-item-wrapper">
+            <div class="label1"></div>
+            <div class="content">
+                <div>
+                    <input class="input1" type="submit" name="submit" value="确认">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+<script>
+var test = document.getElementById('test');
+test.addEventListener('change', function() {
+    var t_files = this.files;
+    var str = '';
+    for (var i = 0, len = t_files.length; i < len; i++) {
+        str += '<li>名称：' + t_files[i].name + '大小' + t_files[i].size / 1024 + 'KB</li>';
+    };
+    document.getElementById('test').innerHTML = str;
+}, false);
+</script>
+</html>

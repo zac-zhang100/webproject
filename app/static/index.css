@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    auto: 0;
+}
+body, button, input, select, textarea {
+    font-size: 12px;
+    font-family: Microsoft YaHei, \5b8b\4f53, Arial, Verdana;
+}
+.header {
+    position: relative;
+    z-index: 101;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    padding: 5px 0;
+    background-color: rgba(255,255,255,0.98);
+    border-bottom: 1px solid #e2e1e2;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.09);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.09);
+}
+.header-center.special {
+    max-width: 1400px;
+    margin: auto;
+}
+
+element.style {
+}
+.header-center.special {
+    max-width: 1400px;
+    margin: auto;
+}
+.header-center {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1350px;
+    max-width: 100%;
+    height: 50px;
+    margin: 0 0;
+    background-size: contain;
+}
+.header-center.special .menu-location {
+    margin: 0;
+}
+.menu-location {
+    float: left;
+    margin-left: 10px;
+    font-size: 0;
+}
+.header-center.special .user-do {
+    padding-right: 0;
+}
+.user-do {
+    float: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 37px;
+}
+.padding-block .location-item {
+    height: 30px;
+    margin: 10px 5px;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: transparent;
+    border-bottom: none;
+    border-radius: 2px;
+    border-radius: 15px;
+}
+.location-item {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0 16px;
+    color: #333;
+    font-size: 20px;
+    line-height: 47px;
+    vertical-align: top;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+a {
+    color: #03f;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+.header-center.special .menu-location .logo {
+    margin-left: 0;
+}
+.header-center .logo {
+    float: left;
+    width: 144px;
+    height: 50px;
+    margin: 0 30px 0 40px;
+    background: url(//cc.res.netease.com/_next/static/images/common/logo-2.0667.png) no-repeat;
+}
+.search.search {
+    position: relative;
+    margin-top: 7px;
+    padding: 0 9px 0 13px;
+    width: 166px;
+    height: 34px;
+    background-color: #ecebeb;
+    border: 1px solid #ecebeb;
+    border-radius: 17px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #999999;
+}
+.user-do-item {
+    position: relative;
+    float: left;
+    margin: 0 10px;
+    color: #666;
+    line-height: 50px;
+    cursor: pointer;
+}
+.search-text {
+    outline: 0;
+    border: 0;
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 140px;
+    height: 34px;
+    line-height: 34px;
+    background: transparent;
+}
+input[type="text" i] {
+    padding: 1px 2px;
+}
+user agent stylesheet
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+.user-do-item .def-font {
+    font-size: 20px;
+}
+.search-btn {
+    float: right;
+    width: 20px;
+    height: 28px;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+}
+.def-font {
+    font-family: 'icomoon';
+    font-size: 16px;
+    font-family: 'icomoon' !important;
+}
+span:before{
+    content: url("image/search.png")
+}
+em, span {
+    display: inline-block;
+    vertical-align: top;
+}
+em, span {
+    display: inline-block;
+    vertical-align: top;
+}
+address, caption, cite, code, dfn, em, strong, th, var, i {
+    font-weight: normal;
+    font-style: normal;
+}
+.rank {
+    text-align: center;
+}
+.rank h2 {
+    padding: 6% 0;
+    background: #fff;
+    font-size: 2em;
+    font-weight: bold;
+}
+.rank h2 img {
+    width: 24px;
+    vertical-align: -16%;
+    margin-right: 1%;
+}
+img {
+    border: none;
+}
+.rank .rank_table {
+    width: 100%;
+    color: #333;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.rank .rank_table thead th {
+    background: #fff;
+    font-size: 1.5em;
+    padding: 2% 0;
+    border-bottom: 1px solid #eee;
+}
+table th {
+    border: 0;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.rank .rank_table td {
+    padding-top: 4%;
+    font-size: 1.5em;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}

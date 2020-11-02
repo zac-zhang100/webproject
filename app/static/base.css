@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    auto: 0;
+}
+body, button, input, select, textarea {
+    font-size: 12px;
+    font-family: Microsoft YaHei, \5b8b\4f53, Arial, Verdana;
+}
+.header {
+    position: relative;
+    z-index: 101;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    padding: 5px 0;
+    background-color: rgba(255,255,255,0.98);
+    border-bottom: 1px solid #e2e1e2;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.09);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.09);
+}
+.header-center.special {
+    max-width: 1400px;
+    margin: auto;
+}
+
+element.style {
+}
+.header-center.special {
+    max-width: 1400px;
+    margin: auto;
+}
+.header-center {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1350px;
+    max-width: 100%;
+    height: 50px;
+    margin: 0 0;
+    background-size: contain;
+}
+.header-center.special .menu-location {
+    margin: 0;
+}
+.menu-location {
+    float: left;
+    margin-left: 10px;
+    font-size: 0;
+}
+.header-center.special .user-do {
+    padding-right: 0;
+}
+.user-do {
+    float: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 37px;
+}
+.padding-block .location-item {
+    height: 30px;
+    margin: 10px 5px;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: transparent;
+    border-bottom: none;
+    border-radius: 2px;
+    border-radius: 15px;
+}
+.location-item {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0 16px;
+    color: #333;
+    font-size: 20px;
+    line-height: 47px;
+    vertical-align: top;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+a {
+    color: #03f;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+.header-center.special .menu-location .logo {
+    margin-left: 0;
+}
+.header-center .logo {
+    float: left;
+    width: 144px;
+    height: 50px;
+    margin: 0 30px 0 40px;
+    background: url(//cc.res.netease.com/_next/static/images/common/logo-2.0667.png) no-repeat;
+}
+.search.search {
+    position: relative;
+    margin-top: 7px;
+    padding: 0 9px 0 13px;
+    width: 166px;
+    height: 34px;
+    background-color: #ecebeb;
+    border: 1px solid #ecebeb;
+    border-radius: 17px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #999999;
+}
+.user-do-item {
+    position: relative;
+    float: left;
+    margin: 0 10px;
+    color: #666;
+    line-height: 50px;
+    cursor: pointer;
+}
+.search-text {
+    outline: 0;
+    border: 0;
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 140px;
+    height: 34px;
+    line-height: 34px;
+    background: transparent;
+}
