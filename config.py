@@ -6,4 +6,5 @@ class Config(object):
     DB = MongoClient()['test']
     USER_COLLECTION = DB.user
     PLAYER_COLLECTION = DB.player
+    IMAGE_COLLECTION = DB.image
 

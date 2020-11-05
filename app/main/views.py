@@ -1,9 +1,8 @@
 from flask import render_template,flash,redirect,url_for,request
 from app import create_app
 from . import main
-from app.forms import LoginForm,set_password,check_password
-from flask_login import current_user,login_user
-from flask_pymongo import PyMongo
+from flask_login import current_user,login_user,login_required
+from ..models import User
 
 app = create_app()
 
@@ -22,31 +21,30 @@ def index():
         {'title': 'WALL-E', 'year': '2008'},
         {'title': 'The	Pork	of	Music', 'year': '2012'},
     ]
-    return render_template('base.html', name=name, movies=movies)
+    return render_template('base.html')
 
 @main.route('/login',methods=['GET','POST'])
 def login():
-    # if current_user.is_authenticated:
-    #     return redirect(url_for('index'))
+    if current_user.is_authenticated:
+        return redirect(url_for('main.index'))
 
-    # app.config["MONGO_URI"] = "mongodb://localhost:27017/test"
-    # mongo = PyMongo(app)
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = app.config['USER_COLLECTION'].find_one({"name":form.username.data})
-        if user:
-            check = app.config['USER_COLLECTION'].find_one({"name": form.username.data, "password": form.password.data})
-            if check:
-                flash('Login requested for user {}, remember_me={}'.format(
-                    form.username.data, form.remember_me.data))
-                return redirect(url_for('main.base'))
+    if request.method == 'POST':
+        name = request.form['name']
+
+        if name:
+            data = app.config['USER_COLLECTION'].find_one({'name':name})
+            if data:
+                user = User(id=data.get('_id'), username=data.get('name'), password=data.get('password'))
+                hash = user.set_password(user.password)
+                password = request.form['password']
+                if user.validate_password(hash,password):
+                    login_user(user)
+                    return redirect(url_for('main.index'))
             else:
-                flash('Invalid password')
                 return "Invalid password"
-
-        flash("Cannot find username, please register.")
-
-    return render_template('login.html', title='Sign In', form=form)
+            flash("Cannot find username, please register.")
+        flash("Empty Input.")
+    return render_template('login.html')
 
 @main.route('/enroll',methods=['GET','POST'])
 def enroll():
@@ -56,6 +54,17 @@ def enroll():
         phone = request.form.get('phone')
         password = request.form.get('password')
         app.config['PLAYER_COLLECTION'].insert_one({"name":name,"nickname":nickname,"phone":phone,"password":password})
-        return redirect(url_for('main.base'))
+        image = request.form.get('img')
+        app.config['IMAGE_COLLECTION'].insert_one(
+            {"avatar": image})
+        return redirect(url_for('main.index'))
 
     return render_template('enroll.html')
+
+@main.route('/register',methods=['GET','POST'])
+def register():
+    return render_template('register.html')
+
+@main.route('/rank',methods=['GET','POST'])
+def rank():
+    return render_template('rank.html')

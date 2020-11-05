@@ -1,3 +1,146 @@
+.header-center.special {
+    max-width: 1400px;
+    margin: auto;
+}
+
+element.style {
+}
+.header-center.special {
+    max-width: 1400px;
+    margin: auto;
+}
+.header-center {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1350px;
+    max-width: 100%;
+    height: 50px;
+    margin: 0 0;
+    background-size: contain;
+}
+.header-center.special .menu-location {
+    margin: 0;
+}
+.menu-location {
+    float: left;
+    margin-left: 10px;
+    font-size: 0;
+}
+.header-center.special .user-do {
+    padding-right: 0;
+}
+.user-do {
+    float: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 37px;
+}
+.padding-block .location-item {
+    height: 30px;
+    margin: 10px 5px;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: transparent;
+    border-bottom: none;
+    border-radius: 2px;
+    border-radius: 15px;
+}
+.location-item {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0 16px;
+    color: #333;
+    font-size: 20px;
+    line-height: 47px;
+    vertical-align: top;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+.header {
+    position: relative;
+    z-index: 101;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    padding: 5px 0;
+    background-color: rgba(255,255,255,0.98);
+    border-bottom: 1px solid #e2e1e2;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.09);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.09);
+}
+.header-center.special .menu-location .logo {
+    margin-left: 0;
+}
+.header-center .logo {
+    float: left;
+    width: 144px;
+    height: 50px;
+    margin: 0 30px 0 40px;
+    background: url(//cc.res.netease.com/_next/static/images/common/logo-2.0667.png) no-repeat;
+}
+.search.search {
+    position: relative;
+    margin-top: 7px;
+    padding: 0 9px 0 13px;
+    width: 166px;
+    height: 34px;
+    background-color: #ecebeb;
+    border: 1px solid #ecebeb;
+    border-radius: 17px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #999999;
+}
+.user-do-item {
+    position: relative;
+    float: left;
+    margin: 0 10px;
+    color: #666;
+    line-height: 50px;
+    cursor: pointer;
+}
+.search-text {
+    outline: 0;
+    border: 0;
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 140px;
+    height: 34px;
+    line-height: 34px;
+    background: transparent;
+}
+.user-do .search input[type="text" i] {
+    padding: 1px 2px;
+}
+
+.user-do-item .def-font {
+    font-size: 20px;
+}
+.user-do .search .search-btn {
+    float: right;
+    width: 20px;
+    height: 28px;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+}
+.def-font {
+    font-family: 'icomoon';
+    font-size: 16px;
+    font-family: 'icomoon' !important;
+}
+.user-do .search span:before{
+    content: url("image/search.png")
+}
+.user-do .search span {
+    display: inline-block;
+    vertical-align: top;
+}
 .block-container {
     display: -webkit-box;
     width: 1000px;
@@ -237,4 +380,64 @@ input {
     border-style: inset;
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
+}
+.onload {
+opacity: 0;
+}
+.crop button{
+ background-color: #189094;
+ color: white;
+ padding: 10px 15px;
+ border-radius: 3px;
+ border: 1px solid rgba(255, 255, 255, 0.5);
+ font-size: 16px;
+ cursor: pointer;
+ text-decoration: none;
+ text-shadow: none;
+}
+.crop button:focus {
+ outline: 0;
+}
+
+.file-btn {
+ position: relative;
+}
+.close input[type="file"] {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+.actions {
+ padding: 5px 50%;
+}
+
+.upload-result{
+position:relative;
+margin-left: 50%;
+transform: translate(-50%,-120px);
+}
+.crop{
+width: 300px;
+height: 400px;
+position:absolute;
+top: 400px;
+left: 50%;
+transform: translate(-50%,-50%);
+z-index:10;
+display:none;
+border: 0.5px solid rgba(128,118,105,0.3);
+border-radius: 3px;
+}
+.close{
+position: absolute;
+right: 10px;
+top: 10px;
+z-index: 100;
+cursor: pointer;
+}
+#upload-demo{
+margin-top: 40px;
 }

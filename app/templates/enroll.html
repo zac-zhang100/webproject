@@ -6,16 +6,105 @@
     <link rel="stylesheet" type="text/css" href="../static/base.css">
     <link rel="stylesheet" type="text/css" href="../static/enroll.css">
     <link rel="SHORTCUT ICON" href="//cc.res.netease.com/act/webcc/favicon/favicon.ico">
+    <script src="../static/jquery.min.js"></script>
+     <script src="https://cdn.bootcdn.net/ajax/libs/croppie/2.6.5/croppie.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/croppie/2.6.5/croppie.css" rel="stylesheet">
+    <script>
+$(function(){
+ var $uploadCrop;
+
+  function readFile(input) {
+    if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+     $uploadCrop.croppie('bind', {
+      url: e.target.result
+     });
+    }
+
+    reader.readAsDataURL(input.files[0]);
+   }
+   else {
+    alert("请选择一张图片上传");
+   }
+  }
+
+  $uploadCrop = $('#upload-demo').croppie({
+   viewport: {
+    width: 80,
+    height: 80,
+    type: 'circle'
+   },
+   boundary: {
+    width: 180,
+    height: 180
+   }
+  });
+
+  $('#upload').on('change', function () {
+   $(".crop").show();
+   readFile(this);
+  });
+  $('.upload-result').on('click', function (ev) {
+   $uploadCrop.croppie('result', 'canvas').then(function (resp) {
+    popupResult({
+     src: resp
+    });
+   });
+  });
+
+ function popupResult(result) {
+  var html;
+  if (result.html) {
+   html = result.html;
+  }
+  if (result.src) {
+   html = '<img src="' + result.src + '" />';
+  }
+  $(".cover").html(html);
+ }
+
+
+$('.upload').click(function(){
+$('.crop').fadeIn();
+});
+$('.upload-result').click(function(){
+$('.crop').fadeOut();
+});
+$('.close').click(function(){
+$('.crop').fadeOut();
+});
+
+var fileInput = document.getElementById("upload");
+fileInput.addEventListener('change', function(){
+if(fileInput.files[0] == undefined){
+return;
+}
+var file = fileInput.files[0];
+var reader = new FileReader();
+reader.readAsDataURL(file);
+reader.onload = function(e){
+$.post('/enroll',{img: e.target.result});
+console.log(this.result);
+}
+});
+
+
+});
+
+
+</script>
 </head>
 <body>
 <div class="header">
 <div class="header-center padding-block special">
     <div class="menu-location">
         <a href="#" class="logo"></a>
-        <a href="app/tem/login.html" class="location-item">登录</a>
-        <a href="app/tem/login.html" class="location-item">注册</a>
-        <a href="rank.html" class="location-item">排行</a>
-        <a href="enroll.html" class="location-item">报名</a>
+        <a href="{{ url_for('main.login') }}" class="location-item">登录</a>
+        <a href="{{ url_for('main.register') }}" class="location-item">注册</a>
+        <a href="{{ url_for('main.rank') }}" class="location-item">排行</a>
+        <a href="{{ url_for('main.enroll') }}" class="location-item">报名</a>
     </div>
     <div class="user-do">
         <div class="search user-do-item" id="searchBoss">
@@ -76,16 +165,17 @@
                   <div class="byte-spin-container">
                     <div class="byte-spin-content">
                         <div style="display:flex; align-items:center">
-                            <div class="avatar-wrapper">
+                            <div class="avatar-wrapper" id="wrap">
                                 <div class="m-avataruploader-imagewrapper active" tabindex="0">
-                                    ::before
-                                    <img class="imagewrapper-image-url" src="#">
+                                    <!--                                    ::before-->
+                                    <div class="cover">    <img id="result" class="imagewrapper-image-url"  src="../static/image/head.jpeg"></div>
                                     <div class="imagewrapper-image-op">
                                         <div class="upload-handler">
-                                            <input class="input" id="test" type="file" name="photo" accept="image/*" title>
+                                            <input id="upload" class="input"  type="file" name="photo" accept="image/*" title>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -106,16 +196,14 @@
     </div>
 </form>
 </div>
+    <div class="actions">
+
+ <div class="crop">
+     <span class="close"><img src="../static/image/close.png"> </span>
+  <div id="upload-demo"></div>
+     <button class="upload-result">裁剪</button>
+
+ </div>
+</div>
 </body>
-<script>
-var test = document.getElementById('test');
-test.addEventListener('change', function() {
-    var t_files = this.files;
-    var str = '';
-    for (var i = 0, len = t_files.length; i < len; i++) {
-        str += '<li>名称：' + t_files[i].name + '大小' + t_files[i].size / 1024 + 'KB</li>';
-    };
-    document.getElementById('test').innerHTML = str;
-}, false);
-</script>
 </html>

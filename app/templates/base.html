@@ -11,10 +11,10 @@
 <div class="header-center padding-block special">
     <div class="menu-location">
         <a href="#" class="logo"></a>
-        <a href="url_for('main.login')" class="location-item">登录</a>
-        <a href="app/tem/login.html" class="location-item">注册</a>
-        <a href="rank.html" class="location-item">排行</a>
-        <a href="enroll.html" class="location-item">报名</a>
+        <a href="{{ url_for('main.login') }}" class="location-item">登录</a>
+        <a href="{{ url_for('main.register') }}" class="location-item">注册</a>
+        <a href="{{ url_for('main.rank') }}" class="location-item">排行</a>
+        <a href="{{ url_for('main.enroll') }}" class="location-item">报名</a>
     </div>
     <div class="user-do">
         <div class="search user-do-item" id="searchBoss">
