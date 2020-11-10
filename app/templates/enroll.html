@@ -81,11 +81,12 @@ fileInput.addEventListener('change', function(){
 if(fileInput.files[0] == undefined){
 return;
 }
+var phone = document.getElementById("phone").value;
 var file = fileInput.files[0];
 var reader = new FileReader();
 reader.readAsDataURL(file);
 reader.onload = function(e){
-$.post('/enroll',{img: e.target.result});
+$.post('/enroll',{img: e.target.result,phone:phone});
 console.log(this.result);
 }
 });
@@ -142,21 +143,12 @@ console.log(this.result);
             <div class="label">电话</div>
             <div class="content">
                 <div>
-                    <input class="input" type="text" name="phone" placeholder="输入框默认内容">
+                    <input class="input" id="phone" type="text" name="phone" placeholder="输入框默认内容">
                 </div>
             </div>
         </div>
     </div>
-    <div class="block-item">
-        <div class="block-item-wrapper">
-            <div class="label">密码</div>
-            <div class="content">
-                <div>
-                    <input class="input" type="text" name="password" placeholder="输入框默认内容">
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="block-item">
         <div class="block-item-wrapper">
             <div class="label">头像</div>
@@ -189,7 +181,7 @@ console.log(this.result);
             <div class="label1"></div>
             <div class="content">
                 <div>
-                    <input class="input1" type="submit" name="submit" value="确认">
+                    <input class="input1" type="submit" id="submit" value="确认">
                 </div>
             </div>
         </div>

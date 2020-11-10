@@ -52,11 +52,9 @@ def enroll():
         nickname = request.form.get('nickname')
         name = request.form.get('name')
         phone = request.form.get('phone')
-        password = request.form.get('password')
-        app.config['PLAYER_COLLECTION'].insert_one({"name":name,"nickname":nickname,"phone":phone,"password":password})
+        app.config['PLAYER_COLLECTION'].insert_one({"name":name,"nickname":nickname,"phone":phone,"vote": 0})
         image = request.form.get('img')
-        app.config['IMAGE_COLLECTION'].insert_one(
-            {"avatar": image})
+        app.config['IMAGE_COLLECTION'].insert_one({"avatar": image,"phone":phone})
         return redirect(url_for('main.index'))
 
     return render_template('enroll.html')

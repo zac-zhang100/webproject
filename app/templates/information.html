@@ -3,8 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="../static/base.css">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="SHORTCUT ICON" href="//cc.res.netease.com/act/webcc/favicon/favicon.ico">
+     <script src="../static/jquery.min.js"></script>
+
 </head>
 <body>
+<div class="header">
+<div class="header-center padding-block special">
+    <div class="menu-location">
+        <a href="#" class="logo"></a>
+        <a href="{{ url_for('main.login') }}" class="location-item">登录</a>
+        <a href="{{ url_for('main.register') }}" class="location-item">注册</a>
+        <a href="{{ url_for('main.rank') }}" class="location-item">排行</a>
+        <a href="{{ url_for('main.enroll') }}" class="location-item">报名</a>
+    </div>
+    <div class="user-do">
+        <div class="search user-do-item" id="searchBoss">
+            <input type="text" id="playerName" placeholder="搜索主播ID" class="search-text js-search-text" maxlength="30">
+            <span class="search-btn js-search-btn def-font searcher" id="search-btn">
+            </span>
+        </div>
+    <div>
+</div>
+</div>
+<div class="rank">
+        <h2>
+            <img src="../static/image/hot.png">
+            个人简介
+        </h2>
+        <table class="rank_table">
+            <thead>
+            <tr>
 
+            </tr>
+            </thead>
+            <tbody id="table-body">
+            <tr>
+
+                <td><span class="avatar-wrapper"><img src="../static/image/head.jpeg"></span></td>
+            </tr>
+            <tr>
+                <td>姓名: </td>
+            </tr>
+            <tr>
+                <td>昵称：</td>
+            </tr>
+            <tr>
+                <td>选手id：</td>
+            </tr>
+            <tr>
+                <td>手机号码：</td>
+            </tr>
+            <tr>
+                <td>得票数：</td>
+            </tr>
+            <tr>
+                <td>排名：</td>
+            </tr>
+            <tr>
+                <td><button>投票</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
-</html>

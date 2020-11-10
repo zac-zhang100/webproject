@@ -29,4 +29,11 @@ def load_user(user_id):
     return User(id=user.get('_id'),username=user.get('name'),password=user.get('password'))
 
 class Player:
-    def __init__(self,name,nickname,):
+    def __init__(self,name,nickname,id,phone,vote,rank,image):
+        self.name = name
+        self.nickname = nickname
+        self.id = id
+        self.phone = phone
+        self.vote = vote
+        self.rank = rank
+        self.image = image
