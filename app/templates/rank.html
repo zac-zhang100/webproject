@@ -26,21 +26,40 @@
 
            for(var i=0;i<list.length;i++){
            var j = i+1;
-           str+="<tr><td><span onclick='showInfo()' class='avatar-wrapper'><img src='../static/image/head.jpeg'></span></td><td>"+j+"</td><td>"+list[i].name+"</td><td>"+list[i].vote+"</td><td><button name='"+list[i].vote+"' class='add' id='"+list[i].name+"'>投票</button></td></tr>";
+           str+="<tr><td><span id='"+list[i].name+"' class='avatar-wrapper'><img src='../static/image/head.jpeg'></span></td><td>"+j+"</td><td>"+list[i].name+"</td><td>"+list[i].vote+"</td><td><button name='"+list[i].uid+"' class='add' id='"+list[i].name+"'>投票</button></td></tr>";
 
            }
            $('#table-body').html(str);
+
+       <!--click the relevant button and vote for the player-->
            $(".add").on('click',function(){
            var trueName = $(this).attr("id");
-           var result = $(this).attr("name");
-           var vote = Number(result)+1;
+           var uid = $(this).attr("name");
+           $.ajax({
+           url: '/api/users/vote',
+           type: 'GET',
+           data:
+           {playerName : trueName,
+           uid : uid
+           },
+           });
+
+           event.stopPropagation();
+
+           });
+      <!--click the avatar of the player to visit the personal information page-->
+           $(".avatar-wrapper").on('click',function(){
+           var Name = $(this).attr("id");
            $.ajax({
            url: '/api/users/player_information',
            type: 'GET',
            data:
-           {playerName : trueName,
-           vote: vote
+           {playerName : Name,
            },
+           success: function(data){
+           window.location.href = "api/users/showInfo?name="+data.info.name+"&nickname="+data.info.nickname+"&phone="+data.info.phone+"&vote="+data.info.vote+"&rank="+data.rank;
+
+           }
            });
 
            event.stopPropagation();
@@ -110,13 +129,7 @@
             </tr>
             </thead>
             <tbody id="table-body">
-<!--            <tr>-->
-<!--                <td><span class="avatar-wrapper"><img src="../static/image/head.jpeg"></span></td>-->
-<!--                <td>张三</td>-->
-<!--                <td>100</td>-->
-<!--                <td><button>投票</button></td>-->
-<!--                <td>3</td>-->
-<!--            </tr>-->
+
             </tbody>
         </table>
     </div>

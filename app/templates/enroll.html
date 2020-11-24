@@ -86,7 +86,7 @@ var file = fileInput.files[0];
 var reader = new FileReader();
 reader.readAsDataURL(file);
 reader.onload = function(e){
-$.post('/enroll',{img: e.target.result,phone:phone});
+$.post('/api/users/load_avatar',{img: e.target.result,phone:phone});
 console.log(this.result);
 }
 });

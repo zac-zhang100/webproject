@@ -2,7 +2,7 @@ from flask import render_template,flash,redirect,url_for,request
 from app import create_app
 from . import main
 from flask_login import current_user,login_user,login_required
-from ..models import User
+from ..models import User,Player
 
 app = create_app()
 
@@ -52,9 +52,13 @@ def enroll():
         nickname = request.form.get('nickname')
         name = request.form.get('name')
         phone = request.form.get('phone')
-        app.config['PLAYER_COLLECTION'].insert_one({"name":name,"nickname":nickname,"phone":phone,"vote": 0})
-        image = request.form.get('img')
-        app.config['IMAGE_COLLECTION'].insert_one({"avatar": image,"phone":phone})
+
+        cursor = app.config['IMAGE_COLLECTION'].find_one({"phone": phone})
+        uid = cursor['_id']
+        app.config['PLAYER_INFO'].insert_one({"_id": uid,"name":name,"nickname":nickname,"phone":phone})
+
+        app.config['PLAYER_COLLECTION'].insert_one({"_id":uid,"vote": 0})
+
         return redirect(url_for('main.index'))
 
     return render_template('enroll.html')

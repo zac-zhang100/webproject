@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="../static/base.css">
-    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="../../static/base.css">
+    <link rel="stylesheet" href="../../static/index.css">
     <link rel="SHORTCUT ICON" href="//cc.res.netease.com/act/webcc/favicon/favicon.ico">
-     <script src="../static/jquery.min.js"></script>
-
 </head>
 <body>
 <div class="header">
@@ -31,7 +29,7 @@
 </div>
 <div class="rank">
         <h2>
-            <img src="../static/image/hot.png">
+            <img src="../../static/image/hot.png">
             个人简介
         </h2>
         <table class="rank_table">
@@ -43,25 +41,25 @@
             <tbody id="table-body">
             <tr>
 
-                <td><span class="avatar-wrapper"><img src="../static/image/head.jpeg"></span></td>
+                <td><span class="avatar-wrapper"><img src="../../static/image/head.jpeg"></span></td>
             </tr>
             <tr>
-                <td>姓名: </td>
+                <td>姓名: {{ name }} </td>
             </tr>
             <tr>
-                <td>昵称：</td>
+                <td>昵称：{{ nickname }}</td>
             </tr>
             <tr>
                 <td>选手id：</td>
             </tr>
             <tr>
-                <td>手机号码：</td>
+                <td>手机号码：{{ phone }}</td>
             </tr>
             <tr>
-                <td>得票数：</td>
+                <td>得票数：{{ vote }}</td>
             </tr>
             <tr>
-                <td>排名：</td>
+                <td>排名：{{ rank }}</td>
             </tr>
             <tr>
                 <td><button>投票</button></td>
